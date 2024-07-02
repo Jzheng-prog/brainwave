@@ -5,19 +5,35 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/design/Header";
 import { useState } from "react";
+import { disablePageScroll,enablePageScroll } from "scroll-lock";
 
 const Header = () => {
   const pathName = useLocation();
   const [openNav, setOpenNav] = useState(false);
-  console.log(openNav);
+  // console.log(openNav);
+
+  function handleClick(){
+    if(!openNav){
+      return
+    }
+    enablePageScroll()
+    setOpenNav(false)
+  }
 
   const toggleNav = () => {
-    setOpenNav(!openNav);
+    console.log(openNav)
+    if(openNav){
+      setOpenNav(false)
+      enablePageScroll()
+    }else{
+      setOpenNav(true)
+      disablePageScroll()
+    }
   };
 
   return (
     <div
-      className={`fixed top-0 left-0 z-50 bg-n-8/90 backdrop-blur-sm 
+      className={`fixed top-0 left-0 z-50
         border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm w-full ${
           openNav ? "bg-n-8" : "bg-n-8/90 backdrop-blue-sm"
         }`}
@@ -40,6 +56,7 @@ const Header = () => {
             {navigation.map((item) => (
               <a
                 key={item.id}
+                onClick={handleClick}
                 href={item.url}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
@@ -69,12 +86,11 @@ const Header = () => {
         <Button
           className="ml-auto lg:hidden"
           px="px-3"
-          href="#login"
           onClick={toggleNav}
         >
           <MenuSvg openNavigation={openNav} />
         </Button>
-        <button onClick={toggleNav}>button</button>
+        {/* <button onClick={toggleNav}>button</button> */}
       </div>
     </div>
   );
