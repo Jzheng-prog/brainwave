@@ -18,7 +18,8 @@ Brainwave is a single-page website built with Vite, React.js, and Tailwind CSS.
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-   ```Clone repo
+   ```
+   Clone repo
    cd brainwave
    ```
 
@@ -31,3 +32,4 @@ Follow these steps to set up the project locally:
     ```sh
     npm run dev
     ```
+Click on **localhost**
