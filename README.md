@@ -1,10 +1,10 @@
 # Brainwave
 
-Brainwave is a single-page website built with Vite, React.js, and Tailwind CSS. It features a responsive design and includes sections like a hero, services, features, roadmap, and pricing. It also has parallax animations to enhance the user experience.
+Brainwave is a single-page website built with Vite, React.js, and Tailwind CSS.
 
 ## Features
 
-- **Responsive Design**: Works seamlessly on both large and small screens.
+- **Responsive Design**: Works seamlessly on both large and small screens. Small devices the navBar changes to a hamburger navBar.
 - **Parallax Animation**: Smooth scrolling with parallax effects.
 - **Hero Section**: Eye-catching hero section to grab users' attention.
 - **Services Section**: Showcase the services offered.
@@ -18,17 +18,16 @@ Brainwave is a single-page website built with Vite, React.js, and Tailwind CSS. 
 Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
-    ```sh
-    git clone <repository-url>
-    cd brainwave
-    ```
+   ```Clone repo
+   cd brainwave
+   ```
 
-2. **Install Dependencies**:
+3. **Install Dependencies**:
     ```sh
     npm install
     ```
 
-3. **Run the Development Server**:
+4. **Run the Development Server**:
     ```sh
     npm run dev
     ```
